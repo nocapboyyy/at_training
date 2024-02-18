@@ -6,10 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 
 abstract public class BasicSettings {
 
-    //установка webdriver, указание и запуск браузера
+    //webdriver installing, browser pick and run
     public void setUp(){
         WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
+        Configuration.browser = "edge";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
         //Configuration.driverManagerEnabled = true;

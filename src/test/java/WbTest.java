@@ -8,6 +8,6 @@ public class WbTest extends BasicSettings{
     @Test
     public void checkHref(){
         MainPage mainPage = new MainPage(BASE_URL);
-        int a = 0;
+        mainPage.search(REQUEST_STRING);
     }
 }
