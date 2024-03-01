@@ -12,7 +12,7 @@ abstract public class BasicSettings {
         Configuration.browser = "edge";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
-        Configuration.timeout=5000;
+        Configuration.timeout = 1000;
         //Configuration.driverManagerEnabled = true;
     }
 
