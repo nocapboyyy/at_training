@@ -1,7 +1,17 @@
 public class ProductDto {
-    public double price;
     public double priceAfterDiscount;
+    public double priceWithoutDiscount;
     public String manufacturer;
     public String productName;
+
+    @Override
+    public boolean equals (Object o){
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductDto comparableDto = (ProductDto) o;
+
+        return this.priceAfterDiscount == comparableDto.priceAfterDiscount && this.priceWithoutDiscount == comparableDto.priceWithoutDiscount &&
+                this.manufacturer.equals(comparableDto.manufacturer) && this.productName.equals(comparableDto.productName);
+    }
 
 }

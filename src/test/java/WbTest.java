@@ -4,7 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WbTest extends BasicSettings{
 
     private final static String BASE_URL = "https://www.wildberries.ru/";
-    private final static String REQUEST_STRING = "Видеокарта GeForce RTX 4090 ROG Strix OC Edition 24GB";
+    private final static String REQUEST_STRING = "Видеокарта GeForce RTX 4060 WINDFORCE OC 8G";
+
 
     @Test
     public void wildberriesActivity(){
@@ -17,5 +18,10 @@ public class WbTest extends BasicSettings{
         FullProductCard fullProductCard = new FullProductCard();
         ProductDto dtoFullProductCard = fullProductCard.getFullProductCardAttributes();
         assertEquals(dtoPageAfterSearch, dtoFullProductCard);
+        fullProductCard.addtoCart();
+        fullProductCard.moveToCart();
+        CartPage cartPage = new CartPage();
+        ProductDto dtoCartPage = cartPage.getCartProductAttributes();
+        assertEquals(dtoFullProductCard, dtoCartPage);
     }
 }
