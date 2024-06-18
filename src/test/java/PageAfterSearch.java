@@ -13,7 +13,7 @@ public class PageAfterSearch {
     private final String linkXpath = ".//a[@class='product-card__link j-card-link j-open-full-product-card']";
 
     private final String priceAfterDiscountXpath = ".//p//span//ins[@class='price__lower-price wallet-price']";
-    private final String priceXpath = ".//p//span//del";
+//    private final String priceXpath = ".//p//span//del";
     private final String manufacturerXpath = ".//h2//span[@class='product-card__brand']";
     private final String productNameXpath = ".//h2//span[@class='product-card__name']";
     private final String extraSpanXpath = ".//h2//span[@class='product-card__name']//span";
@@ -30,14 +30,14 @@ public class PageAfterSearch {
      */
     public ProductDto getProductAttributes(){
         int priceAfterDiscount = Integer.parseInt(findInFirstElement(priceAfterDiscountXpath).getText().replaceAll("\\D", ""));
-        int price = Integer.parseInt(findInFirstElement(priceXpath).getText().replaceAll("\\D", ""));
+//        int price = Integer.parseInt(findInFirstElement(priceXpath).getText().replaceAll("\\D", ""));
         String manufacturer = findInFirstElement(manufacturerXpath).getText();
         String productName = findInFirstElement(productNameXpath).getText();
         String extraSpan = findInFirstElement(extraSpanXpath).getText();
 
         ProductDto dto = new ProductDto();
         dto.priceAfterDiscount = priceAfterDiscount;
-        dto.priceWithoutDiscount = price;
+//        dto.priceWithoutDiscount = price;
         dto.manufacturer = manufacturer.trim();
         dto.productName = productName.replaceFirst(extraSpan, "").trim();
 

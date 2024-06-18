@@ -12,15 +12,18 @@ public class WbTest extends BasicSettings{
         MainPage mainPage = new MainPage(BASE_URL);
         mainPage.search(REQUEST_STRING);
         PageAfterSearch pageAfterSearch = new PageAfterSearch();
+        wait(10);
         ProductDto dtoPageAfterSearch = pageAfterSearch.getProductAttributes();
         assertEquals(REQUEST_STRING, dtoPageAfterSearch.productName);
         pageAfterSearch.moveToFullProductCard();
         FullProductCard fullProductCard = new FullProductCard();
+        wait(10);
         ProductDto dtoFullProductCard = fullProductCard.getFullProductCardAttributes();
         assertEquals(dtoPageAfterSearch, dtoFullProductCard);
         fullProductCard.addtoCart();
         fullProductCard.moveToCart();
         CartPage cartPage = new CartPage();
+        wait(10);
         ProductDto dtoCartPage = cartPage.getCartProductAttributes();
         assertEquals(dtoFullProductCard, dtoCartPage);
     }

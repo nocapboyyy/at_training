@@ -20,15 +20,13 @@ public class FullProductCard {
 
     public ProductDto getFullProductCardAttributes(){
         int priceAfterDiscount = Integer.parseInt($(By.xpath("/html/body/div[1]/main/div[2]/div/div[3]/div/div[3]/div[14]/div/div[1]/div[2]/div/div/div/p/span/span")).shouldBe(exist).getText().replaceAll("\\D", ""));
-        int priceWithoutDiscount = Integer.parseInt($(By.xpath("/html/body/div[1]/main/div[2]/div/div[3]/div/div[3]/div[14]/div/div[1]/div[2]/div/div/div/p/del/span")).shouldBe(exist).getText().replaceAll("\\D", ""));
+//        int priceWithoutDiscount = Integer.parseInt($(By.xpath("/html/body/div[1]/main/div[2]/div/div[3]/div/div[3]/div[14]/div/div[1]/div[2]/div/div/div/p/del/span")).shouldBe(exist).getText().replaceAll("\\D", ""));
         String manufacturer = $(By.xpath(".//a[contains(@class, 'product-page__header-brand')]")).shouldBe(exist).getText();
         String productName = $(By.xpath(".//h1[@class='product-page__title']")).shouldBe(exist).getText();
 
-
-
         ProductDto dto = new ProductDto();
         dto.priceAfterDiscount = priceAfterDiscount;
-        dto.priceWithoutDiscount = priceWithoutDiscount;
+//        dto.priceWithoutDiscount = priceWithoutDiscount;
         dto.manufacturer = manufacturer.trim();
         dto.productName = productName.trim();
 
